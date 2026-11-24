@@ -911,22 +911,25 @@ main {
       }
     }
     a {
-      display: flex;
-      font-size: 30px;
+      
       img {
-        width: 30px;
         background-image: abs.$gradient-button;
+        width: 30px;
       }
         @include com.button-principal();
         margin-top: 10px;
+        font-size: 30px;
         img {
-          width: 50px;
+          width: 30px;
         }
         
         @include abs.breakpoint(tablet) {
           font-size: 50px;
+          img {
+            width: 50px;
+          }
         }
-      }
+    }
 }
 .fullstack_footer {
   margin: 30px;
