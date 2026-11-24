@@ -7,7 +7,6 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
-    
   },
   "devDependencies": {
     "sass": "^1.108.2",
@@ -26,7 +25,6 @@
     "is-extglob": "^2.1.1",
     "is-glob": "^4.0.3",
     "lightningcss": "^1.32.0",
-    "lightningcss-win32-x64-msvc": "^1.32.0",
     "nanoid": "^3.3.11",
     "node-addon-api": "^7.1.1",
     "picocolors": "^1.1.1",
