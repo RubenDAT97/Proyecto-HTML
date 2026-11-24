@@ -1,0 +1,15 @@
+@use "../abstracts/abstracts" as abs;
+
+@mixin button-principal() {
+    background-image: abs.$gradient-button;
+    text-decoration: none;
+    text-decoration: none;
+    border-radius: 3px;
+    text-underline-offset: 8px;
+    color: abs.$color-black;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 5px;
+    display: inline-block;
+
+}

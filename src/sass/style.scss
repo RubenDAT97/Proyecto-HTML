@@ -1,0 +1,945 @@
+@use './abstracts/abstracts' as abs;
+@use './vendors/vendors' as ven;
+@use './base/base' as bas;
+@use './components/components' as com;
+@use './layout/layout' as ly;
+@use './pages/pages' as pg;
+@use './themes/themes' as th;
+@use 'settings' as se;
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px;
+  gap: 20px;
+  img {
+    width: 50%;
+    background-color: abs.$color-lima;
+    border-radius: 50%;
+  }
+  ul {
+    @include abs.reset-list ();
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 5px;
+    flex-wrap: wrap;
+    a {
+      font-size: 20px;
+    }
+    a:hover {
+      color: abs.$color-lima;
+    }
+
+  }
+  @include abs.breakpoint(tablet) {
+    ul {
+      flex-wrap: npwrap;
+      flex-direction: row;
+      justify-content: space-around;
+      gap: 20px;
+      a {
+        font-size: 30px;
+        border-right: solid 2px abs.$color-lima;
+        padding-right: 10px;
+      }
+    }
+  }
+  @include abs.breakpoint(desktop) {
+    ul {
+      flex-wrap: npwrap;
+      flex-direction: row;
+      justify-content: space-around;
+      gap: 30px;
+      a {
+        font-size: 30px;
+        border-right: solid 2px abs.$color-lima;
+        padding-right: 10px;
+      }
+    }
+  }
+}
+
+//INDEX
+main {
+  margin: 30px;
+}
+.initial {
+  margin-bottom: 30px;
+  &-first {
+    h1 {
+      font-size: 20px;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 30px;
+      span {
+        font-size: 25px;
+        color: abs.$color-black;
+        background-image: abs.$gradient;
+      }
+    }
+      p {
+        font-size: 15px;
+        margin-bottom: 20px;
+        color: abs.$color-lima;
+        text-align: center;
+      }
+    }
+    figure{
+      display: flex;
+      flex-direction: column;
+      figcaption {
+        color: abs.$color-cyan;
+        text-align: center;
+      }
+      
+    }
+    img {
+      margin: auto;
+      width: 100%;
+    }
+  @include abs.breakpoint(tablet) {
+    h1 {
+      font-size: 40px;
+      span {
+        font-size: 60px;
+      }
+    }
+    p {
+      font-size: 30px;
+    }
+    figure {
+      figcaption {
+        font-size: 30px;
+      }
+      
+      img {
+        width: 80%;
+      }
+    }
+  }
+  @include abs.breakpoint(desktop) {
+    display: flex;
+    h1 {
+      font-size: 50px;
+      span {
+        font-size: 80px;
+      }
+    }
+    p {
+      font-size: 30px;
+    }
+    figure {
+      width: 50%;
+      figcaption {
+        font-size: 40px;
+      }
+      
+      img {
+        width: 100%;
+        height: 60%;
+      }
+    }
+  }
+    
+}
+.equipo {
+  margin-bottom: 40px;
+  h2 {
+    text-align: center;
+    font-size: 20px;
+    color: abs.$color-cyan;
+  }
+  img {
+      width: 100%;
+  }
+  @include abs.breakpoint(tablet) {
+    h2 {
+      font-size: 40px;
+      font-weight: 400;
+    }
+  }
+  @include abs.breakpoint(desktop) {
+    h2 {
+      font-size: 60px;
+      font-weight: 400;
+    }
+  }
+   
+}
+  
+.information {
+  margin-bottom: 30px;
+  h2 {
+    color: abs.$color-lima;
+    margin-bottom: 10px;
+  }
+  p {
+    color: abs.$color-cyan;
+    margin-bottom: 10px;
+  }
+  button {
+    border: 0;
+    a {
+        display: flex;
+        font-size: 25px;
+        
+        @include com.button-principal();
+        img {
+          width: 20px;
+          background-image: abs.$gradient-button;
+        }
+      }
+  
+  }
+  @include abs.breakpoint(tablet) {
+    h2 {
+      font-size: 40px;
+    }
+    p {
+      font-size: 30px;
+    }
+    button {
+      a {
+        font-size: 40px;
+        img {
+          width: 40px;
+        }
+      }
+    }
+    
+  }
+  
+  @include abs.breakpoint(desktop) {
+    h2 {
+      font-size: 50px;
+    }
+    p {
+      font-size: 35px;
+    }
+  }
+  a {
+    font-size: 50px;
+    img {
+      width: 50px;
+    }
+  }
+}
+.empieza {
+  margin-bottom: 30px;
+  h2 {
+    color: abs.$color-lima;
+    margin-bottom: 10px;
+  }
+  h3 {
+    color: abs.$color-white;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .second {
+    color: abs.$color-cyan;
+  }
+  button {
+    border: 0;
+    a {
+        display: flex;
+        @include com.button-principal();
+        font-size: 25px;
+        img {
+          width: 20px;
+          background-image: abs.$gradient-button;
+        }
+      }
+  }
+  
+  @include abs.breakpoint(tablet) {
+    h2 {
+      font-size: 40px;
+    }
+    h3 {
+      font-size: 35px;
+      margin-bottom: 20px;
+    }
+    button {
+      a {
+        font-size: 40px;
+        img {
+          width: 40px;
+        }
+      }
+    }
+  }
+  @include abs.breakpoint(desktop) {
+    h2 {
+      font-size: 50px;
+    }
+    h3 {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+  }
+  a {
+    font-size: 50px;
+    img {
+      width: 50px;
+    }
+  }
+
+}
+.more {
+  h2 {
+    color: abs.$color-lima;
+    margin-bottom: 10px;
+    font-size: 25px;
+  }
+  &__inf {
+      a {
+          display: flex;
+          @include com.button-principal();
+          align-content:center;
+          margin-bottom: 10px;
+          img {
+            width: 60px;
+            background-image: abs.$gradient-button;
+            margin-right: 10px;
+          }
+        }
+  }
+  @include abs.breakpoint(tablet) {
+    h2 {
+      font-size: 30px;
+    }
+    &__inf {
+      a {
+      font-size: 40px;
+        img {
+          width: 90px;
+
+        }
+      }
+    }
+    
+  }
+  @include abs.breakpoint(desktop) {
+    h2 {
+      font-size: 40px;
+    }
+    a {
+      font-size: 50px;
+      img {
+        width: 80px;
+      }
+    }
+    
+  }
+  
+}
+.footer {
+  margin: 30px;
+  p {
+    font-size: 15px;
+  }
+  @include abs.breakpoint(tablet) {
+    p {
+      font-size: 20px;
+    }
+  }
+}
+
+
+//Cursos
+.cursos {
+  h2 {
+    font-size: 30px;
+    text-align: center;
+    color: abs.$color-lima;
+
+  }
+  img {
+    width: 100%;
+  }
+  &__1, &__2 {
+    h2 {
+      color: abs.$color-black;
+      background-image: abs.$gradient;
+      border-radius: 20%;
+      margin-bottom: 20px
+    }
+    a {
+      display: flex;
+      @include com.button-principal();
+      img {
+        width: 30px;
+        background-image: abs.$gradient-button;
+      }
+    }
+  }
+  @include abs.breakpoint(tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    h2 {
+      font-size: 70px;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+    &__1, &__2 {
+      width: 48%;
+      margin: auto;
+      h2 {
+        font-size: 30px;
+        border-radius: 5%;
+      }
+    }
+  }
+  @include abs.breakpoint(tablet) {
+    h2 {
+      font-size: 100px;
+    }
+    &__1, &__2 {
+      h2 {
+        font-size: 50px;
+      }
+    }
+  }
+
+}
+.cursos__footer {
+  margin: 30px;
+  font-size: 12px;
+  @include abs.breakpoint(tablet) {
+    font-size: 20px;
+  }
+}
+
+//Quienes somos
+
+.quienes_somos_main {
+  h2 {
+    font-size: 25px;
+    text-align: center;
+    color: abs.$color-lima;
+    margin-bottom: 10px;
+
+  }
+  p {
+    font-size: 18px;
+  }
+  img {
+    width: 100%;
+    background-color: abs.$color-white;
+    margin-bottom: 10px;
+  }
+  .equipo__conquer {
+    h3 {
+      color: abs.$color-cyan;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    p {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+  }
+   @include abs.breakpoint(tablet) {
+    h2 {
+      font-size: 40px;
+    }
+    p {
+      font-size: 25px;
+    }
+    .equipo__conquer {
+      h3 {
+        font-size: 30px;
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+   } 
+}
+.quienes_somos_footer {
+    margin: 30px;
+  font-size: 12px;
+  @include abs.breakpoint(tablet) {
+    font-size: 20px;
+  }
+}
+
+//Blog
+.blog_main {
+  h1 {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 10px;
+    span {
+      color: abs.$color-lima;
+    }
+  }
+  h3 {
+    font-size: 17px;
+    text-align: center;
+    color: abs.$color-cyan;
+
+  }
+  @include abs.breakpoint(tablet) {
+    h1 {
+      font-size: 40px;
+    }
+    h3 {
+      font-size: 27px;
+      margin-bottom: 20px;
+    }
+  }
+  .links {
+    img {
+      width: 100%;
+      margin-bottom: 5px
+    }
+    a {
+      @include com.button-principal();
+      display: block;
+      border-radius: 10px;
+    }
+    article {
+      margin-bottom: 20px;
+    }
+    @include abs.breakpoint(tablet) {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      article {
+        width: 48%;
+        a {
+          font-size: 26px;
+          padding: 10px;
+        }
+      }
+    }
+  }
+}
+.footer__blog {
+    margin: 30px;
+  font-size: 12px;
+  @include abs.breakpoint(tablet) {
+    font-size: 20px;
+  }
+}
+
+//Registro
+.registro_main {
+  h1 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: abs.$color-lima;
+    @include abs.breakpoint(tablet) {
+      font-size: 60px;
+      text-align: center;
+    }
+  }
+  input {
+    font-size: 20px;
+    margin-bottom: 30px;
+    @include abs.breakpoint(tablet) {
+      font-size: 40px;
+    }
+  }
+  input:focus {
+    color: abs.$color-black;
+    background-color: abs.$color-white;
+  }
+  button {
+    @include com.button-principal();
+    margin-top: 40px;
+    @include abs.breakpoint(tablet) {
+      font-size: 50px;
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    input[type="file"] {
+      display: flex;
+      flex-direction: column;
+      font-size: 20px;
+      
+      &::file-selector-button {
+        @include com.button-principal();
+        font-size: 20px;
+        @include abs.breakpoint(tablet) {
+      font-size: 50px;
+    }
+      }
+      @include abs.breakpoint(tablet) {
+      font-size: 50px;
+    }
+    } 
+  }
+  .campo__bio {
+    display: flex;
+    flex-direction: column;
+    label {
+      font-size: 20px;
+      margin-bottom: 10px;
+      @include abs.breakpoint(tablet) {
+      font-size: 50px;
+    }
+    }
+    &:focus-within {
+      label {
+        color: abs.$color-cyan;
+      }
+    }
+    
+  }
+  .campo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    label {
+      font-size: 20px;
+      margin-bottom: 20px;
+      transition: 0.5s ease;
+      @include abs.breakpoint(tablet) {
+      font-size: 50px;
+      }
+    }
+    &:focus-within {
+      label {
+        color: abs.$color-cyan;
+      }
+    }
+  
+  }
+  
+}
+.registro__footer{
+    margin: 30px;
+  font-size: 12px;
+  @include abs.breakpoint(tablet) {
+    font-size: 20px;
+  }
+}
+
+//Contacto
+.contacto__main {
+  h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: abs.$color-lima;
+    @include abs.breakpoint(tablet) {
+      font-size: 60px;
+      text-align: center;
+    }
+  }
+  h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: abs.$color-cyan;
+    @include abs.breakpoint(tablet) {
+      font-size: 50px;
+    }
+  }
+  p {
+    font-size: 20px;
+    span {
+      color: abs.$color-cyan;
+    }
+    @include abs.breakpoint(tablet) {
+      font-size: 30px;
+    }
+    
+    
+  }
+  .formulario{
+    h2 {
+      color: abs.$color-lima;
+      @include abs.breakpoint(tablet) {
+      text-align: center;
+      margin-bottom: 40px;
+      margin-top: 40px;
+    }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;  
+      button {
+        @include com.button-principal();
+        margin-top: 10px;
+        @include abs.breakpoint(tablet) {
+          font-size: 50px;
+        }
+      }
+    }
+    label {
+      font-size: 20px;
+      margin-bottom: 20px;
+      transition: 0.5s ease;
+      @include abs.breakpoint(tablet) {
+      font-size: 50px;
+      }
+    }
+    &:focus-within {
+      label {
+        color: abs.$color-cyan;
+      }
+    }
+    &:focus-within {
+      label {
+        color: abs.$color-cyan;
+      }
+    }
+    input {
+      font-size: 20px;
+      margin-bottom: 30px;
+      @include abs.breakpoint(tablet) {
+        font-size: 40px;
+      }
+    }
+    input:focus {
+      color: abs.$color-black;
+      background-color: abs.$color-white;
+    }
+    
+  }
+  iframe {
+    width: 100%;
+  }
+}
+.contacto__footer {
+    margin: 30px;
+  font-size: 12px;
+  @include abs.breakpoint(tablet) {
+    font-size: 20px;
+  }
+}
+
+//Login
+.login__main {
+  h1 {
+      color: abs.$color-lima;
+      font-size: 30px;
+      margin-bottom: 20px;
+      @include abs.breakpoint(tablet) {
+      text-align: center;
+      margin-bottom: 40px;
+      margin-top: 40px;
+      font-size: 60px;
+    }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;  
+      button {
+        @include com.button-principal();
+        margin-top: 10px;
+        @include abs.breakpoint(tablet) {
+          font-size: 50px;
+        }
+      }
+    }
+    label {
+      font-size: 20px;
+      margin-bottom: 20px;
+      transition: 0.5s ease;
+      @include abs.breakpoint(tablet) {
+      font-size: 40px;
+      }
+      @include abs.breakpoint(desktop) {
+      font-size: 50px;
+      }
+    }
+    &:focus-within {
+      label {
+        color: abs.$color-cyan;
+      }
+    }
+    &:focus-within {
+      label {
+        color: abs.$color-cyan;
+      }
+    }
+    input {
+      font-size: 20px;
+      margin-bottom: 30px;
+      @include abs.breakpoint(tablet) {
+        font-size: 40px;
+      }
+    }
+    input:focus {
+      color: abs.$color-black;
+      background-color: abs.$color-white;
+    }
+}
+.login__footer {
+    margin: 30px;
+  font-size: 12px;
+  @include abs.breakpoint(tablet) {
+    font-size: 20px;
+  }
+}
+
+//Full Stack
+.fullstack_main {
+  h1 {
+      color: abs.$color-lima;
+      font-size: 25px;
+      margin-bottom: 20px;
+      @include abs.breakpoint(tablet) {
+      text-align: center;
+      margin-bottom: 40px;
+      margin-top: 40px;
+      font-size: 40px;
+    }
+    @include abs.breakpoint(desktop) {
+      font-size: 60px;
+    }
+    
+    }
+    .inf1 {
+      img {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      h2 {
+        font-size: 20px;
+        text-align: center;
+        color: abs.$color-cyan;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 15px;
+        margin-bottom: 10px;
+      }
+      @include abs.breakpoint(tablet) {
+        display: flex;
+        flex-wrap: wrap;
+        img {
+          max-width: 400px;
+          margin-left: 20px;
+        }
+        h2 {
+          width: 50%;
+          font-size: 40px;
+          padding-left: 10%;
+        }
+        p {
+          font-size: 25px;
+        }
+
+      }
+      @include abs.breakpoint(desktop) {
+        img {
+          max-width: 500px;
+        }
+        h2 {
+          font-size: 60px;
+        }
+        p {
+          font-size: 45px;
+        }
+      }
+    }
+    h2 {
+        font-size: 20px;
+        text-align: center;
+        color: abs.$color-cyan;
+        margin-bottom: 30px;
+        @include abs.breakpoint(tablet) {
+          font-size: 40px;
+        }
+        @include abs.breakpoint(desktop) {
+          margin-bottom: 40px;
+          margin-top: 40px;
+          font-size: 60px;
+        }
+      }
+    .inf2 {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      p {
+        border: 2px abs.$color-cyan solid;
+        border-radius: 5px;
+        text-align: center;
+        background-color: abs.$color-lima;
+        color: abs.$color-black
+      }
+      img {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      @include abs.breakpoint(tablet) {
+        flex-direction: row;
+        img {
+          max-width: 200px;
+          margin: 0;
+        }
+        p {
+          text-align:center;
+          padding: 20px;
+          font-weight: 700;
+        }
+
+      }
+      @include abs.breakpoint(desktop) {
+        img {
+          max-width: 300px;
+        }
+        p {
+          font-size: 25px;
+        }
+      }
+      
+    }
+    h3 {
+      text-align: center;
+      color: abs.$color-lima;
+      font-size: 25px;
+      @include abs.breakpoint(tablet) {
+        font-size: 40px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      @include abs.breakpoint(desktop) {
+        font-size: 60px;
+      }
+    }
+    a {
+      display: flex;
+      font-size: 30px;
+      img {
+        width: 30px;
+        background-image: abs.$gradient-button;
+      }
+        @include com.button-principal();
+        margin-top: 10px;
+        img {
+          width: 50px;
+        }
+        
+        @include abs.breakpoint(tablet) {
+          font-size: 50px;
+        }
+      }
+}
+.fullstack_footer {
+  margin: 30px;
+  font-size: 12px;
+  @include abs.breakpoint(tablet) {
+    font-size: 20px;
+  }
+}
+
+    //window.matchMedia("(min-widt: 798px)").matches
+    //@include abs.breakpoint(tablet-horizontal) {}
+    //@include abs.breakpoint(desktop) {}
+    //@include abs.breakpoint(desktop-xl) {}
+    //@include abs.breakpoint(tablet) {}
+
+

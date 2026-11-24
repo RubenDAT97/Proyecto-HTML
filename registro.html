@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>Registro | Registrate en ConquerAcademy</title>
+
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+       
+        <div class="header"> 
+            <img src="logo_conquerblocks-04.png" alt="Logotipo de la empresa">
+            <nav>
+                        <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="quienes_somos.html">Quiénes somos</a></li>
+                                <li><a href="cursos.html">Cursos</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="login.html">Login</a></li>
+                                <li><a href="contacto.html">Contacto</a></li>
+                        </ul>   
+            </nav>
+        </div>
+        
+    </header>
+    <main class="registro_main">
+        <h1>Formulario de registro Conquer Academy</h1>
+        <form action="procesar_registro.php" method="post">
+            <div class="campo">
+                <label for="nombre">Nombe Completo</label>
+                <input type="text" id="nombre" name="nombre" required autofocus>
+            </div>
+            <div class="campo">
+                <label for="fecha">Fecha de nacimiento</label>
+                <input type="date" id="fecha" name="fecha" required>
+            </div>
+            <div class="campo">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="campo">
+                 <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" required>
+
+            </div>
+            <div class="campo">
+                <label for="web">Página Web:</label>
+                <input type="text" id="web" name="web" required>
+            </div>
+            <div class="campo">
+                <label for="foto">Foto:</label>
+                <input type="file" id="foto" name="foto" accept="image/*" required>
+            </div>
+            <div class="campo__bio">
+                 <label for="biografia">Biogrfía</label>
+                <textarea name="biogafia" id="biografia" cols="10" rows="10"></textarea>
+            </div>
+
+            <button>Enviar Formulario</button>
+        </form>   
+    </main>
+    
+    <footer class="registro__footer">
+        <h3>© Derechos reservados <em> MasterConquerBlocks 2025</em> <a href="aviso-legal.html">Aviso legal</a></h3>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

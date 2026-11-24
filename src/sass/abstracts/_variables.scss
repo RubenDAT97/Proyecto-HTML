@@ -1,0 +1,14 @@
+// Tipos de break-point
+$bp-tablet: 767px;
+$bp-tablet-horizontal: 1024px;
+$bp-desktop: 1290px;
+$bp-desktop-xl: 1440px;
+
+
+$text-font: "Science Gothic", sans-serif;
+$color-black: #131313;
+$color-cyan: #5EBCA2;   
+$color-white: #BEBEBE;
+$color-lima: #E7F866;
+$gradient: linear-gradient($color-white, $color-lima);
+$gradient-button: linear-gradient(to right bottom, $color-cyan, $color-lima);       
